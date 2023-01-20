@@ -6,8 +6,7 @@
   "scripts": {
     "test": "jest",
     "check-types": "tsc",
-    "build": "tsc && babel src -d dist --ignore src/**/*.spec.ts,src/**/*.test.ts -x .js,.ts,.tsx",
-    "postinstall": "npm run build"
+    "build": "tsc --emitDeclarationOnly && babel src -d dist --ignore src/**/*.spec.ts,src/**/*.test.ts -x .js,.ts,.tsx"
   },
   "repository": {
     "type": "git",
@@ -27,8 +26,16 @@
     "url": "https://github.com/impactility-dev"
   },
   "contributors": [
-    {"name":"Sumit Hotchandani","email":"sumit.hothchandani@impactility.com","url":"https://github.com/Sumitjh26997"},
-    {"name":"Shikhar Bhatt","email":"shikhar.bhatt@impactility.com","url":"https://github.com/ShikharBhatt"}
+    {
+      "name": "Sumit Hotchandani",
+      "email": "sumit.hothchandani@impactility.com",
+      "url": "https://github.com/Sumitjh26997"
+    },
+    {
+      "name": "Shikhar Bhatt",
+      "email": "shikhar.bhatt@impactility.com",
+      "url": "https://github.com/ShikharBhatt"
+    }
   ],
   "license": "MIT",
   "bugs": {
@@ -53,7 +60,7 @@
     "@types/jest": "^27.4.0",
     "@typescript-eslint/eslint-plugin": "^5.10.2",
     "@typescript-eslint/parser": "^5.10.2",
-    "eslint": "^8.8.0",
+    "eslint": "^8.32.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.25.4",
