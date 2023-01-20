@@ -18,7 +18,8 @@ export interface AzureKeyVaultCredentials {
   clientSecret?: string;
   clientCertificatePath?: string;
   accessToken?: AccessToken;
-  keyVersion?: string
+  keyVersion?: string;
+  useDefaultAzureCredential?: boolean;
 }
 
 /**

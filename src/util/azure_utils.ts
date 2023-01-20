@@ -3,6 +3,7 @@ import {KeyClient, CryptographyClient, SignResult} from '@azure/keyvault-keys';
 import {
   ClientSecretCredential,
   ClientCertificateCredential,
+  DefaultAzureCredential
 } from '@azure/identity';
 import {BN} from 'bn.js';
 import {AzureKeyVaultCredentials} from '../index';
@@ -36,7 +37,9 @@ export async function getCredentials(keyVaultCredentials:
   try {
     let credentials;
 
-    if (keyVaultCredentials.clientSecret) {
+    if (keyVaultCredentials.useDefaultAzureCredential === true) {
+      credentials = new DefaultAzureCredential();
+    } else if (keyVaultCredentials.clientSecret) {
       credentials = new ClientSecretCredential(
           keyVaultCredentials.tenantId,
           keyVaultCredentials.clientId,
