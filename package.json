@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "check-types": "tsc",
-    "build": "tsc --emitDeclarationOnly && babel src -d dist --ignore src/**/*.spec.ts,src/**/*.test.ts -x .js,.ts,.tsx",
+    "build": "tsc && babel src -d dist --ignore src/**/*.spec.ts,src/**/*.test.ts -x .js,.ts,.tsx",
     "postinstall": "npm run build"
   },
   "repository": {
