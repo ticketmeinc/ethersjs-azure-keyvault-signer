@@ -38,7 +38,9 @@ async function keyVaultConnect(keyVaultCredentials) {
 async function getCredentials(keyVaultCredentials) {
   try {
     let credentials;
-    if (keyVaultCredentials.clientSecret) {
+    if (keyVaultCredentials.useDefaultAzureCredential === true) {
+      credentials = new _identity.DefaultAzureCredential();
+    } else if (keyVaultCredentials.clientSecret) {
       credentials = new _identity.ClientSecretCredential(keyVaultCredentials.tenantId, keyVaultCredentials.clientId, keyVaultCredentials.clientSecret);
     } else if (keyVaultCredentials.clientCertificatePath) {
       credentials = new _identity.ClientCertificateCredential(keyVaultCredentials.tenantId, keyVaultCredentials.clientId, keyVaultCredentials.clientCertificatePath);

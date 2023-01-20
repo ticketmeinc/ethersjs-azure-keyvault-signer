@@ -13,6 +13,7 @@ export interface AzureKeyVaultCredentials {
     clientCertificatePath?: string;
     accessToken?: AccessToken;
     keyVersion?: string;
+    useDefaultAzureCredential?: boolean;
 }
 /**
  * class implementing ethers Signer methods for keys stored in Azure Key Vault
