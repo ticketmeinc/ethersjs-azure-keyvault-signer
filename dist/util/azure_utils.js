@@ -14,8 +14,11 @@ exports.sign = sign;
 var _ethers = require("ethers");
 var _keyvaultKeys = require("@azure/keyvault-keys");
 var _identity = require("@azure/identity");
+var _identityVscode = require("@azure/identity-vscode");
 var _bn = require("bn.js");
 var _credentials = require("./credentials");
+(0, _identity.useIdentityPlugin)(_identityVscode.vsCodePlugin);
+
 /**
  * function to connect to Key Vault using either
  * client secret or credentials

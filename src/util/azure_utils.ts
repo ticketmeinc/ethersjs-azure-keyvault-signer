@@ -3,11 +3,15 @@ import {KeyClient, CryptographyClient, SignResult} from '@azure/keyvault-keys';
 import {
   ClientSecretCredential,
   ClientCertificateCredential,
-  DefaultAzureCredential
+  DefaultAzureCredential,
+  useIdentityPlugin
 } from '@azure/identity';
+import { vsCodePlugin } from "@azure/identity-vscode";
 import {BN} from 'bn.js';
 import {AzureKeyVaultCredentials} from '../index';
 import {StaticTokenCredential} from './credentials';
+
+useIdentityPlugin(vsCodePlugin) ;
 
 /**
  * function to connect to Key Vault using either
